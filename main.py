@@ -1,13 +1,17 @@
 import tkinter as tk;
 
+from xmlreader import XMLReader;
+
 def main():
+    currency_list = XMLReader().read();
+
     background = "#f1f5f2";
     app = tk.Tk();
     app.title("Euro Converter");
     app.geometry("480x420");
     app.configure(bg=background);
 
-    currencies = ("EUR", "USD", "GBP", "JPY", "CHF");
+    currencies = ("EUR", *currency_list.keys());
     from_currency = tk.StringVar(value="EUR");
     to_currency = tk.StringVar(value="USD");
 

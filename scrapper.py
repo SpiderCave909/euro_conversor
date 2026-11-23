@@ -12,7 +12,9 @@ class Scrapper:
             
             if response.status_code == 200:
                 print("Successfull connection.");
-                print(response.content.decode('utf-8'));
+
+                with open("currencies.xml", "wb") as f:
+                    f.write(response.content);
             else:
                 raise Exception("Unable to connect to server.");
         except Exception as e:
