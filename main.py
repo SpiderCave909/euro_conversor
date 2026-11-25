@@ -1,8 +1,11 @@
 import tkinter as tk;
 
 from xmlreader import XMLReader;
+from scrapper import Scrapper;
 
 def main():
+    Scrapper().scrap();
+    
     currency_list = XMLReader().read();
 
     background = "#f1f5f2";

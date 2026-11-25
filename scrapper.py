@@ -3,10 +3,10 @@ import requests;
 class Scrapper:
     URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
 
-    def __init__(self):
+    def __init__(self) -> None:
         pass;
 
-    def scrap(self):
+    def scrap(self) -> None:
         try:
             response = requests.get(self.URL);
             
